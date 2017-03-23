@@ -6,7 +6,7 @@ Paket ini akan merubah angka menjadi kata-kata terbilang dalam Bahasa Indonesia.
 
 #### Install package
 
-``` npm install angka-menjadi-terbilang```
+``` npm install angka-menjadi-terbilang --save```
 
 #### Panggil
 

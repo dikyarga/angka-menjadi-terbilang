@@ -1,6 +1,6 @@
 {
   "name": "angka-menjadi-terbilang",
-  "version": "0.1.4",
+  "version": "0.1.6",
   "description": "Paket ini akan merubah angka menjadi kata-kata terbilang dalam Bahasa Indonesia. Misal, 234 menjadi 'dua ratus tiga puluh empat'",
   "main": "index.js",
   "scripts": {
