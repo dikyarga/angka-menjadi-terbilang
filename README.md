@@ -14,7 +14,7 @@ Paket ini akan merubah angka menjadi kata-kata terbilang dalam Bahasa Indonesia.
 
 #### Penggunaan
 
-``` console.log(terbilang(245)) ```
+``` console.log(terbilang(234)) ```
 
 hasil
 
