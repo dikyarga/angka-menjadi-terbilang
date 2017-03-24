@@ -32,4 +32,6 @@ hasil
 
 ## Test
 
-``` node test.js ```
+``` mocha ```
+
+sebelumnya install mocha secara globally terlebih dahulu, ``` npm install --save mocha -g```
