@@ -1,8 +1,8 @@
 {
   "name": "angka-menjadi-terbilang",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "Paket ini akan merubah angka menjadi kata-kata terbilang dalam Bahasa Indonesia. Misal, 234 menjadi 'dua ratus tiga puluh empat'",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "NODE_ENV=test mocha $(find test -name '*.js')",
     "lint": "node_modules/eslint/bin/eslint.js index.js src",
@@ -27,6 +27,8 @@
     "babel-preset-es2015": "^6.24.0",
     "chai": "^3.5.0",
     "eslint": "^3.18.0",
+    "eslint-config-standard": "^7.1.0",
+    "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-standard": "^2.1.1",
     "mocha": "^3.2.0"
   },

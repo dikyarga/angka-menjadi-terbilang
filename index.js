@@ -1,4 +1,4 @@
-const { compose, map, reduce, reverse, splitEvery, trim, tap } = require('ramda');
+const { compose, map, reduce, reverse, splitEvery, trim } = require('ramda')
 
 const satuan = xs => {
   switch (xs) {
@@ -29,14 +29,14 @@ const puluhan = xs => {
 }
 
 const ratusan = xs => {
-  const headX   = xs[0]
+  const headX = xs[0]
   const middleX = xs[1]
-  const lastX   = xs[2]
+  const lastX = xs[2]
   const tailX = middleX + lastX
 
   if (xs === '100') return 'seratus'
-  else if (tailX == '00') return `${satuan(headX)} ratus`
-  else if (headX === '0' || headX == '1') return `seratus ${puluhan(tailX)}`
+  else if (tailX === '00') return `${satuan(headX)} ratus`
+  else if (headX === '0' || headX === '1') return `seratus ${puluhan(tailX)}`
 
   return `${satuan(headX)} ratus ${puluhan(tailX)}`
 }
@@ -63,10 +63,9 @@ const nolTiga = xs => {
 
     if (j === 1) return v
     else if (j === 2) {
-      if (v == 'satu') return 'seribu'
+      if (v === 'satu') return 'seribu'
       return `${v} ribu`
-    }
-    else if (j === 3) return `${v} juta`
+    } else if (j === 3) return `${v} juta`
     else if (j === 4) return `${v} milyar`
     else if (j === 5) return `${v} triliun`
     else if (j === 6) return `${v} kuadriliun`
@@ -88,4 +87,4 @@ const ubahAngkaKeBahasa = compose(
   x => x.toString()
 )
 
-module.exports = ubahAngkaKeBahasa;
+module.exports = ubahAngkaKeBahasa
