@@ -6,8 +6,7 @@ var _require = require('ramda'),
     reduce = _require.reduce,
     reverse = _require.reverse,
     splitEvery = _require.splitEvery,
-    trim = _require.trim,
-    tap = _require.tap;
+    trim = _require.trim;
 
 var satuan = function satuan(xs) {
   switch (xs) {
@@ -49,7 +48,7 @@ var ratusan = function ratusan(xs) {
   var lastX = xs[2];
   var tailX = middleX + lastX;
 
-  if (xs === '100') return 'seratus';else if (tailX == '00') return satuan(headX) + ' ratus';else if (headX === '0' || headX == '1') return 'seratus ' + puluhan(tailX);
+  if (xs === '100') return 'seratus';else if (tailX === '00') return satuan(headX) + ' ratus';else if (headX === '0' || headX === '1') return 'seratus ' + puluhan(tailX);
 
   return satuan(headX) + ' ratus ' + puluhan(tailX);
 };
@@ -72,7 +71,7 @@ var nolTiga = function nolTiga(xs) {
     if (!notEmpty) return '';
 
     if (j === 1) return v;else if (j === 2) {
-      if (v == 'satu') return 'seribu';
+      if (v === 'satu') return 'seribu';
       return v + ' ribu';
     } else if (j === 3) return v + ' juta';else if (j === 4) return v + ' milyar';else if (j === 5) return v + ' triliun';else if (j === 6) return v + ' kuadriliun';else if (j === 7) return v + ' kuantiliun';else if (j === 8) return v + ' sekstiliun';else if (j === 9) return v + ' septiliun';else if (j === 10) return v + ' oktiliun';else if (j === 11) return v + ' noniliun';else if (j === 12) return v + ' desiliun';
   }));
