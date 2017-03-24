@@ -11,6 +11,6 @@ describe('Terbilang', () => {
     terbilang(15).should.be.a('string')
   })
   it('it should be return "dua ratus tiga puluh emapat" if the number is 234', () => {
-    terbilang(234).should.be.equal('dua ratus tiga  puluh empat')
+    terbilang(234).should.be.equal('dua ratus tiga puluh empat')
   })
 })
