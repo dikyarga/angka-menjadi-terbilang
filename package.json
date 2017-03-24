@@ -4,7 +4,10 @@
   "description": "Paket ini akan merubah angka menjadi kata-kata terbilang dalam Bahasa Indonesia. Misal, 234 menjadi 'dua ratus tiga puluh empat'",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "NODE_ENV=test mocha $(find test -name '*.js')",
+    "lint": "node_modules/eslint/bin/eslint.js index.js src",
+    "lint:fix": "npm run lint -- --fix",
+    "compile": "babel index.js --out-file dist/index.js"
   },
   "repository": {
     "type": "git",
@@ -21,7 +24,13 @@
   },
   "homepage": "https://github.com/dikyarga/npm-package#readme",
   "devDependencies": {
+    "babel-preset-es2015": "^6.24.0",
     "chai": "^3.5.0",
+    "eslint": "^3.18.0",
+    "eslint-plugin-standard": "^2.1.1",
     "mocha": "^3.2.0"
+  },
+  "dependencies": {
+    "ramda": "^0.23.0"
   }
 }
