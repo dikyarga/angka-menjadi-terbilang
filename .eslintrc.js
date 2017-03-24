@@ -3,5 +3,6 @@ module.exports = {
   "installedESLint": true,
   "plugins": [
     "standard",
+    "promise"
   ]
 };
