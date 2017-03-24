@@ -1,6 +1,6 @@
 {
   "name": "angka-menjadi-terbilang",
-  "version": "0.2.1",
+  "version": "0.2.5",
   "description": "Paket ini akan merubah angka menjadi kata-kata terbilang dalam Bahasa Indonesia. Misal, 234 menjadi 'dua ratus tiga puluh empat'",
   "main": "index.js",
   "scripts": {
@@ -20,7 +20,7 @@
     "url": "https://github.com/dikyarga/npm-package/issues"
   },
   "homepage": "https://github.com/dikyarga/npm-package#readme",
-  "dependencies": {
+  "devDependencies": {
     "chai": "^3.5.0",
     "mocha": "^3.2.0"
   }
