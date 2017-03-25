@@ -1,4 +1,4 @@
-const { compose, map, reduce, reverse, splitEvery, trim } = require('ramda')
+const { compose, map, filter, reduce, reverse, splitEvery, trim } = require('ramda')
 
 const satuan = xs => {
   switch (xs) {
@@ -22,7 +22,7 @@ const puluhan = xs => {
   if (xs === '10') return 'sepuluh'
   else if (xs === '11') return 'sebelas'
   else if (headX === '1') return `${satuan(lastX)} belas`
-  else if (headX === '0') return satuan(headX)
+  else if (headX === '0') return satuan(lastX)
   else if (lastX === '0') return `${satuan(headX)} puluh`
 
   return `${satuan(headX)} puluh ${satuan(lastX)}`
@@ -45,11 +45,12 @@ const pisahAngka = compose(reverse, map(reverse), splitEvery(3), reverse)
 
 const angka = n => {
   const a = parseInt(n)
+  const m = a.toString()
 
-  if (n === '100') return ''
-  else if (a < 10) return satuan(n)
-  else if (a < 100) return puluhan(n)
-  else if (a < 1000) return ratusan(n)
+  if (n === '000') return ''
+  else if (a < 10) return satuan(m)
+  else if (a < 100) return puluhan(m)
+  else if (a < 1000) return ratusan(m)
 }
 
 const nolTiga = xs => {
@@ -81,6 +82,7 @@ const nolTiga = xs => {
 const ubahAngkaKeBahasa = compose(
   trim,
   reduce((acc, x) => acc + ' ' + x, ''), // gabung
+  filter(x => !!x), // buang string kosong
   nolTiga,
   map(angka),
   pisahAngka,
