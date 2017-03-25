@@ -3,6 +3,7 @@
 var _require = require('ramda'),
     compose = _require.compose,
     map = _require.map,
+    filter = _require.filter,
     reduce = _require.reduce,
     reverse = _require.reverse,
     splitEvery = _require.splitEvery,
@@ -37,7 +38,7 @@ var puluhan = function puluhan(xs) {
   var headX = xs[0];
   var lastX = xs[1];
 
-  if (xs === '10') return 'sepuluh';else if (xs === '11') return 'sebelas';else if (headX === '1') return satuan(lastX) + ' belas';else if (headX === '0') return satuan(headX);else if (lastX === '0') return satuan(headX) + ' puluh';
+  if (xs === '10') return 'sepuluh';else if (xs === '11') return 'sebelas';else if (headX === '1') return satuan(lastX) + ' belas';else if (headX === '0') return satuan(lastX);else if (lastX === '0') return satuan(headX) + ' puluh';
 
   return satuan(headX) + ' puluh ' + satuan(lastX);
 };
@@ -57,8 +58,9 @@ var pisahAngka = compose(reverse, map(reverse), splitEvery(3), reverse);
 
 var angka = function angka(n) {
   var a = parseInt(n);
+  var m = a.toString();
 
-  if (n === '100') return '';else if (a < 10) return satuan(n);else if (a < 100) return puluhan(n);else if (a < 1000) return ratusan(n);
+  if (n === '000') return '';else if (a < 10) return satuan(m);else if (a < 100) return puluhan(m);else if (a < 1000) return ratusan(m);
 };
 
 var nolTiga = function nolTiga(xs) {
@@ -80,6 +82,9 @@ var nolTiga = function nolTiga(xs) {
 var ubahAngkaKeBahasa = compose(trim, reduce(function (acc, x) {
   return acc + ' ' + x;
 }, ''), // gabung
+filter(function (x) {
+  return !!x;
+}), // buang string kosong
 nolTiga, map(angka), pisahAngka, function (x) {
   return x.toString();
 });
