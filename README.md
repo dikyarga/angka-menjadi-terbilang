@@ -35,3 +35,6 @@ hasil
 ``` mocha ```
 
 sebelumnya install mocha secara globally terlebih dahulu, ``` npm install --save mocha -g```
+
+## Kontributor
+- [Jihad Dzikri Waspada](https://github.com/dewey92)
