@@ -36,5 +36,10 @@ hasil
 
 sebelumnya install mocha secara globally terlebih dahulu, ``` npm install --save mocha -g```
 
+
+## Todo
+- Tamabah fungsi .rupiah() jika ingin kaliamat di ikutin dengan "rupiah"
+
+
 ## Kontributor
 - [Jihad Dzikri Waspada](https://github.com/dewey92)
