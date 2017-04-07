@@ -38,7 +38,7 @@ sebelumnya install mocha secara globally terlebih dahulu, ``` npm install --save
 
 
 ## Todo
-- Tamabah fungsi .rupiah() jika ingin kaliamat di ikutin dengan "rupiah"
+- Tambah fungsi .rupiah() jika ingin kaliamat di ikutin dengan "rupiah"
 
 
 ## Kontributor
