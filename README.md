@@ -8,17 +8,14 @@ Paket ini akan merubah angka menjadi kata-kata terbilang dalam Bahasa Indonesia.
 
 ``` npm install angka-menjadi-terbilang --save```
 
-#### Panggil
-
-``` let terbilang = require('angka-menjadi-terbilang') ```
-
 #### Penggunaan
 
-``` console.log(terbilang(234)) ```
+```
+const terbilang = require('angka-menjadi-terbilang')
 
-hasil
-
-``` dua ratus tiga puluh empat ```
+console.log(terbilang(234)) // dua ratus tiga puluh empat
+console.log(terbilang('1.000.000.001')) // satu milyar satu
+```
 
 ## Lain-lain
 
@@ -39,7 +36,3 @@ sebelumnya install mocha secara globally terlebih dahulu, ``` npm install --save
 
 ## Todo
 - Tambah fungsi .rupiah() jika ingin hasil kalimat di ikut dengan "rupiah"
-
-
-## Kontributor
-- [Jihad Dzikri Waspada](https://github.com/dewey92)

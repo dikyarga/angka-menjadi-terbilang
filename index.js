@@ -1,4 +1,4 @@
-const { compose, map, filter, reduce, reverse, splitEvery, trim } = require('ramda')
+const { compose, map, reduce, reverse, splitEvery, trim } = require('ramda')
 
 const satuan = xs => {
   switch (xs) {
@@ -81,11 +81,11 @@ const nolTiga = xs => {
 
 const ubahAngkaKeBahasa = compose(
   trim,
-  reduce((acc, x) => acc + ' ' + x, ''), // gabung
-  filter(x => !!x), // buang string kosong
+  reduce((acc, x) => x ? (acc + ' ' + x) : acc, ''), // gabung
   nolTiga,
   map(angka),
   pisahAngka,
+  x => x.replace(/\./g, ''),
   x => x.toString()
 )
 
