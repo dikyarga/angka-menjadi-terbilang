@@ -72,3 +72,12 @@ describe('Terbilang: >jutaan', () => {
     expect(terbilang(1000000001)).to.eql('satu milyar satu')
   })
 })
+
+describe('Terbilang:titik', () => {
+  it('returns "seribu seratus" when given \'1.100\'', () => {
+    expect(terbilang('1.100')).to.eql('seribu seratus')
+  })
+  it('returns "satu milyar satu" when given \'1.000.000.001\'', () => {
+    expect(terbilang('1.000.000.001')).to.eql('satu milyar satu')
+  })
+})

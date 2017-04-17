@@ -3,7 +3,6 @@
 var _require = require('ramda'),
     compose = _require.compose,
     map = _require.map,
-    filter = _require.filter,
     reduce = _require.reduce,
     reverse = _require.reverse,
     splitEvery = _require.splitEvery,
@@ -80,12 +79,11 @@ var nolTiga = function nolTiga(xs) {
 };
 
 var ubahAngkaKeBahasa = compose(trim, reduce(function (acc, x) {
-  return acc + ' ' + x;
+  return x ? acc + ' ' + x : acc;
 }, ''), // gabung
-filter(function (x) {
-  return !!x;
-}), // buang string kosong
 nolTiga, map(angka), pisahAngka, function (x) {
+  return x.replace(/\./g, '');
+}, function (x) {
   return x.toString();
 });
 
